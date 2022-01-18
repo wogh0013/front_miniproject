@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body{
+            background-image: url('./images/bg.jpg');
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="container" style="background-color:beige;">
+    <div style="text-align: right;">
+        <a href="http://localhost:9000/frontMiniProject/index.html" style="text-decoration: none;">HOME</a>
+        >  
+        <span style="color:darkolivegreen">MEMBERSHIP</span>
+    </div>
+
+    <div style="margin-top:40px">
+        <h2 style="text-align:center;font-family:맑은고딕"><strong>MEMBERSHIP</strong></h2> <br>
+    </div>
+
+    <div  style="margin-top:30px"></div>
+        <table class="table table-hover" style="width:50%;margin:auto;margin-top:30px">
+            <colgroup>
+                <col width="25%">
+                <col width="75%">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>회원구분
+                        <image src="./images/icon_required.gif"></image>
+                    </td>
+                    <td>
+                        <input type="radio" class="form-check-input" value="" checked="checked" name="radio">
+                        개인회원 &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" class="form-check-input" value="" name="radio">
+                        기업회원
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-hover" style="width:50%;margin:auto;margin-top:50px">
+            <colgroup>
+                <col width="25%">
+                <col width="75%">
+            </colgroup>
+            <tr>
+                <td>
+                    <h5 style="margin:auto;color: blue;"><strong>기본정보</strong></h5>
+                </td>
+                <td style="text-align: right;">
+                    <image src="./images/icon_required.gif"></image>
+                    필수정보입력</td>
+            </tr>
+            <tr>
+                <th>아이디
+                    <image src="./images/icon_required.gif"></imgage>
+                </th>
+                <td>
+                    <label class="id" title="id">
+                        <input id="id" name="id" fw-filter="isFill"
+                        style="width:300px;margin:auto" fw-msg class="inputTypeText" placeholder="아이디를 입력하세요" value type="text">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>비밀번호
+                    <image src="./images/icon_required.gif"></image>
+                </th>
+                <td>
+                    <label class="password" title="PW">
+                        <input id="password" name="password" fw-filter="isFill&isMin[4]&isMax[16]"
+                        style="width:300px;margin:auto" value type="password" placeholder="비밀번호를 입력하세요">
+                    </label>
+                    <span style="font-size: 11px;"> (영문 대소문자/숫자 4자~16자)</span>
+                </td>
+            </tr>
+            <tr>
+                <th>비밀번호 확인
+                    <image src="./images/icon_required.gif"></image>
+                </th>
+                <td>
+                    <label class="password" title="PW">
+                        <input id="passwordCf" name="passwordCf" fw-filter="isFill&isMin[4]&isMax[16]"
+                        style="width:300px;margin:auto" value type="password" placeholder="비밀번호를 한 번 더 입력하세요">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>비밀번호 확인 질문
+                    <image src="./images/icon_required.gif"></image>
+                </th>
+                <td>
+                    <select class="form-select form-select-sm mb-1" aria-label="Default select example">
+                        <option selected>질문을 선택하세요.</option>
+                        <option value="1">자신의 인생 좌우명은?</option>
+                        <option value="2">자신이 어렸을 때 살던 동네는?</option>
+                        <option value="3">자신이 다녔던 초등학교 이름은?</option>
+                        <option value="4">자신이 가장 존경하는 인물은?</option>
+                        <option value="5">자신의 보물 1호는?</option>
+                        <option value="6">자신이 가장 가고 싶은 나라는?</option>
+                        <option value="7">자신이 가장 좋아하는 가수는?</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>비밀번호 확인 답변
+                    <image src="./images/icon_required.gif"></image>
+                </th>
+                <td>
+                    <input type="text" style="width:500px;margin:auto" value type="text" fw-filter="isFill">
+                </td>
+            </tr>
+            <tr>
+                <th>이름
+                    <image src="./images/icon_required.gif"></image>
+                </th>
+                <td>
+                    <input id="name" type="text" style="width:150px;margin:auto" value type="text" fw-filter="isFill">
+                </td>
+            </tr>
+            <tr>
+                <th>주소
+                    <image src="./images/icon_required.gif"></image>
+                </th>
+                <td>
+                    <input type="text" style="width:100px;" value type="number" fw-filter="isFill">
+                    <a href="https://m.gopeople.co.kr/disp/common/zipcoden/find/?zip1=postcode1&zip2=undefined&addr=addr1&addr2=addr2&form=&type=layer&admin=F"
+                    class="btn btn-outline-secondary btn-sm active" style="margin-top:-4.5px">우편번호</a>
+                    <input type="text" style="width:400px;margin-top:5px;" value type="text" fw-filter="isFill">
+                    <span><small>기본주소</small></span> <br>
+                    <input type="text" style="width:400px;margin-top:5px;" value type="text">
+                    <span><small>상세주소(선택입력)</small></span>                    
+                </td>
+            </tr>
+            <tr>
+                <th>휴대전화
+                    <image src="./images/icon_required.gif"></image>
+                </th>
+                <td>
+                    <select class="form-select form-select-sm mb-1" style="width:80px" 
+                    fw-filter="isFill" aria-label="Default select example">
+                        <option value="1">010</option>
+                        <option value="2">011</option>
+                        <option value="3">016</option>
+                        <option value="4">017</option>
+                        <option value="5">018</option>
+                        <option value="6">019</option> &nbsp;
+                    </select>
+                    -
+                    <input type="text" style="width:90px;margin:auto" value type="number" fw-filter="isFill">
+                    -
+                    <input type="text" style="width:90px;margin:auto" value type="number" fw-filter="isFill">
+                </td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+                <td>
+                    <input type="text" style="width:150px;margin:auto">
+                    @ 
+                    <input type="text" style="width:150px;margin:auto">
+                </td>
+            </tr>
+        </table>
+
+        <table class="table table-hover" style="width:50%;margin:auto;margin-top:50px">
+            <colgroup>
+                <col width="25%">
+                <col width="75%">
+            </colgroup>
+            <tr>
+                <td>
+                    <h5 style="margin:auto;color: blue;"><strong>추가정보</strong></h5>
+                </td>
+                <td style="text-align: right;">
+                    <image src="./images/icon_required.gif"></image>
+                    필수정보입력</td>
+            </tr>
+            <tr>
+                <th>성별</th>
+                <td>
+                    <input type="radio" class="form-check-input" value="" name="radio2">
+                    남자 &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" class="form-check-input" value="" name="radio2">
+                    여자
+                </td>
+            </tr>
+            <tr>
+                <th>생년월일</th>
+                <td>
+                    <input type="text" style="width:70px;margin:auto" value type="number"> 년 &nbsp;
+                    <input type="text" style="width:50px;margin:auto" value type="number"> 월 &nbsp;
+                    <input type="text" style="width:50px;margin:auto" value type="number"> 일
+                </td>
+            </tr>
+            <tr>
+                <th>환불계좌 정보
+                    <image src="./images/icon_required.gif"></image>
+                </th>
+                <td>예금주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" style="width:150px;margin:auto;margin-top:3px" value type="text" fw-filter="isFill"> <br>
+                    은행명 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" style="width:150px;margin:auto;margin-top:3px" value type="text" fw-filter="isFill"> <br>
+                    계좌번호 &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" style="width:300px;margin:auto;margin-top:3px" value type="number" fw-filter="isFill"> <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span><small>('-'을 생략하고 입력해주세요.)</small></span>
+                </td>
+            </tr>
+        </table>
+        <div class="container" style="text-align: center;margin-top:10px">
+            <a href="" class="btn btn-secondary" style="margin-top:10px;margin-bottom:10px;width:15%" onclick="joinus()">회 원 가 입</a>
+        </div>
+    </div>
+</body>
+
+<script>
+    function joinus(){
+        var id = document.getElementById("id");
+        var name = document.getElementById("name");
+        var password = document.getElementById("password");
+        var passwordCf = document.getElementById("passwordCf");
+        
+        if(id.value.trim()=="")
+        {
+        	id.focus();
+            alert("아이디를 입력해주세요.");
+        } 
+        else if(password.value.trim()=="")
+        {
+            password.focus();
+            alert("비밀번호를 입력해주세요.");
+        } 
+        else if(passwordCf.value.trim()=="")
+        {
+            passwordCf.focus();
+            alert("비밀번호 확인을 입력해주세요.");
+        } 
+        else if(password.value.trim() != passwordCf.value.trim())
+        {
+            passwordCf.focus();
+            alert("비밀번호 확인을 다시 하십시오.");
+        } 
+        else if(name.value.trim()=="")
+        {
+            name.focus();
+            alert("이름을 입력해주세요.");
+        } 
+        else{     
+	        alert("회원가입되었습니다.");
+	        window.location.href="http://localhost:9000/frontMiniProject/login1.html";
+        }
+    }
+    
+</script>

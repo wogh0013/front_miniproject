@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <style>
+       body{
+           background-image: url('./images/bg.jpg');
+           background-repeat: no-repeat;
+           background-size:cover;
+           background-attachment: fixed;
+       }
+   </style>
+</head>
+<body class="container" style="background-color:beige;">
+   
+    <div style="text-align: right;">
+        <a href="http://localhost:9000/frontMiniProject/index.html" style="text-decoration: none;">HOME</a>
+        > 
+        <span style="color:darkolivegreen">LOGIN</span>
+    </div>
+
+    <div style="margin-top:40px">
+        <h2 style="text-align:center;font-family: 맑은고딕;font-size:larger"><strong>MEMBER LOGIN</strong></h2> <br>
+    </div>
+    
+    <table class="table table-hover" style="margin-top: 40px;width:40%;margin:auto">
+        <colgroup>
+            <col width="25%">
+            <col width="75%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <td>아이디</td>
+                <td>
+                    <label class="id" title="id">
+                        <input id="id" name="id" fw-filter="isFill" fw-label="아이디"
+                        style="width:300px" fw-msg class="inputTypeText" placeholder="아이디를 입력하세요" value type="text">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td>
+                    <label class="password" title="PW">
+                        <input id="password" name="password" fw-filter="isFill&isMin[4]&isMax[16]"
+                        style="width:300px" fw-label="패스워드" fw-msg autocomplete="off" value type="password" placeholder="비밀번호를 입력하세요">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <h6 style="text-align:right;font-size: 10%;">보안접속</h6>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="container mt-3" style="text-align: center;">
+        <a href="#" id="btnLogin" class="btn btn-primary" style="width:45.5%;margin-bottom:10px;" onclick="login()">LOGIN</a> <br>
+        <a href="#" class="btn btn-secondary" style="width:22.5%">
+            <span style="font-size: 50%;">FIND ID</span>  아이디 찾기
+        </a>
+        <a href="#" class="btn btn-secondary" style="width:22.5%">
+            <span style="font-size: 50%;">FIND PW</span>  비밀번호 찾기
+        </a>
+    </div>
+
+    <div class="container mt-3" style="text-align: center;">
+        <a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=HyThq5PtblQt1ypZTGJD&scope=login+userinfo&state=0121ff3f25f3c9a090c19d549e563de7ac49378a43cef13521ce90da97d6e5ea080e6808afa3abad3e6404b4997612035e91dbb841986b87948df05ca30aa205ce801fc95de349fad9113a6d917dc0aa298070d834e3a6c1617167f3044e51adc5a688b8672211cfc7ca5f9b11cfd7f265e4d7e0c1fe9396dbcc65bd3f7dd276&redirect_uri=https%3A%2F%2Fgopeople.co.kr%2FApi%2FMember%2FOauth2ClientCallback%2Fnaver%2F" class="btn btn-success" style="width:45%; margin-bottom:10px">
+            <img src="./images/icon_login_naver.png"> 네이버 로그인
+        </a> <br>
+        <a href="https://kauth.kakao.com/oauth/authorize?client_id=435b37a3dfa550562fd83d85be5dcf6c&redirect_uri=https%3A%2F%2Fgopeople.co.kr%2FApi%2FMember%2FOauth2ClientCallback%2Fkakao%2F&response_type=code&auth_tran_id=xuetizwjbfl435b37a3dfa550562fd83d85be5dcf6ckyha4fns&ka=sdk%2F1.40.16%20os%2Fjavascript%20sdk_type%2Fjavascript%20lang%2Fko-KR%20device%2FWin32%20origin%2Fhttps%253A%252F%252Fgopeople.co.kr&is_popup=false" class="btn btn-warning" style="width:45%;margin-bottom:10px">
+            <img src="./images/icon_login_kakao.png"> 카카오 로그인
+        </a> <br>
+        <a href="https://appleid.apple.com/auth/authorize?response_type=code&client_id=com.gopeople.byapps.sign&scope=name+email&state=b60dd99204cd03ff1e9b413b7e952858e2197bb5395b5dfd3c7d1e3346f8a779a7df4525aac906ffec8de3398766e0659427237854ca60ce386c154dd6871033cc1841c247bdefa2fa64ba89586a4f39926749ed16ea976d492afe6913670394038f9194919bbc26714f82435a5acc55301893dd9af4bcff48497c7fbf2c7f91&response_mode=form_post&redirect_uri=https%3A%2F%2Fgopeople.co.kr%2FApi%2FMember%2FOauth2ClientCallback%2Fapple%2F" class="btn btn-info" style="width:45%; margin-bottom:10px">
+            <img src="./images/icon_login_apple.png"> Apple 로그인
+        </a>
+    </div>
+
+    <table class="table" style="width:40%;margin:auto">
+        <td></td>
+    </table> <br>
+
+    <div style="text-align: center;">
+        <span style="font-size: 11px;font-family: 맑은고딕;">회원가입을 하시면 다양하고 특별한 혜택이 준비되어 있습니다.</span> <br>
+        <a href="http://localhost:9000/frontMiniProject/joinus.html" class="btn btn-primary" style="margin-top:10px;width:38.5%">회 원 가 입</a>
+    </div>
+</body>
+</html>
+
+<script>
+    $(()=>{
+        $("#btnLogin").click(()=>{
+        	if($("#id").val().trim()==""){
+        		id.focus();
+        		alert("아이디를 입력해주세요.");
+        	}
+        	else if($("#password").val().trim()==""){
+                password.focus();
+                alert("비밀번호를 입력해주세요.");
+            }
+        	else{
+        	alert("로그인되었습니다.");
+            window.location.href="http://localhost:9000/frontMiniProject/index.html";
+        	}
+        });
+    });
+</script>
